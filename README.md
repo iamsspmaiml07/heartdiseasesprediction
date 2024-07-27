@@ -41,3 +41,36 @@ Ensure you have the following installed:
    ```sh
    git clone https://github.com/yourusername/heart-disease-prediction.git
    cd heart-disease-prediction
+2. Create and activate a virtual environment (optional but recommended):
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+3. Install the required dependencies:
+   pip install -r requirements.txt
+4. Save the trained model and scaler using the provided scripts.
+
+Running the Application Locally
+1. Start the FastAPI server:
+    uvicorn main:app --reload
+2. Run the Streamlit frontend:
+   streamlit run app.py
+   
+Access the Streamlit application in your web browser at http://localhost:8501.
+
+API Endpoints
+POST /predict: Predict heart disease based on input parameters.
+Example Request
+curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d '{
+    "age": 63,
+    "sex": 1,
+    "cp": 3,
+    "trestbps": 145,
+    "chol": 233,
+    "fbs": 1,
+    "restecg": 0,
+    "thalach": 150,
+    "exang": 0,
+    "oldpeak": 2.3,
+    "slope": 0,
+    "ca": 0,
+    "thal": 1
+}'

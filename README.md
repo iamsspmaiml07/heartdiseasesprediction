@@ -10,8 +10,7 @@ This repository contains a heart disease prediction application built using Fast
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
@@ -74,3 +73,18 @@ curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json"
     "ca": 0,
     "thal": 1
 }'
+
+Deployment
+Docker
+Build the Docker image:
+
+
+Copy code
+docker build -t heart-disease-prediction .
+Run the Docker container:
+
+
+Copy code
+docker run -p 8000:8000 -p 8501:8501 heart-disease-prediction
+Cloud Deployment
+You can deploy this application to any cloud service that supports Docker containers, such as Heroku, AWS, or Google Cloud. Refer to the specific service's documentation for detailed instructions.

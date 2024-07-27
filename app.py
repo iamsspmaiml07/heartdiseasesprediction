@@ -19,6 +19,12 @@ def heartPredictFunction(input_param):
         return f"An error occurred: {str(e)}"
 
 def main():
+
+    st.set_page_config(page_title="HeartBuddy Assistant",
+                   layout="wide",
+                   page_icon="🧑‍⚕️")
+
+    
     st.title('Heart Disease Identification Classification in E-Healthcare')
 
     # Collect input data
